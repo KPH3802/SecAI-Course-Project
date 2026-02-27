@@ -1,0 +1,24 @@
+# Private source materials - never publish
+00_Source_Material/
+
+# OS files
+.DS_Store
+*/.DS_Store
+
+# Word temp files
+~$*
+
+# Data files
+*.db
+*.csv
+*.xlsx
+
+# Credentials
+.env
+*.credentials
+config.py
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
