@@ -145,8 +145,8 @@
 |------|--------|-------|
 | Form: SecAI Free Deck Signup | ✅ Active | |
 | Incentive email | ✅ Active | Subject: "Your free SecAI+ Anki deck is here" |
-| Deck download link in email | ✅ Working | GitHub Release v1.0.0 link |
-| Double opt-in | ✅ Enabled | |
+| Deck download link in email | ✅ Working | GitHub Release v1.0.0 link — layout fixed Mar 5, inbox confirmed |
+| Double opt-in | ✅ Auto-confirm enabled | Removes confirmation requirement — subscribers confirmed instantly |
 | Confirmed subscribers | ⏳ Growing | Test subscriber confirmed Mar 5 |
 | Launch email — practice exam | ⬜ Not Started | Draft when exam is ready |
 | Launch email — study guide | ⬜ Not Started | Draft when guide is ready |
