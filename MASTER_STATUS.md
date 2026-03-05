@@ -153,6 +153,29 @@
 
 ---
 
+## PLATFORM REFERENCE
+
+| Platform | Type | Access | Relevant? | Notes |
+|----------|------|--------|-----------|-------|
+| Gumroad | Creator-direct | Open | ✅ Primary | ~90% margin, you own customer. Use first for all paid products. |
+| Teachable / Thinkific | Creator-direct | Open | ✅ Consider | Better than Gumroad for video courses — bundles video + downloads + community. Evaluate when video course is ready. |
+| Udemy | Open marketplace | Open | ✅ Secondary | Built-in cert-prep search traffic. Heavy discounting ($9.99 promos). Use for volume/visibility after Gumroad launch. |
+| Skillshare | Open marketplace | Open | ⚠️ Low priority | Subscription/royalty model. Small tech audience. Not cert-prep focused. |
+| edX | Curated/partnership | Application required | ❌ Not viable | Acquired by 2U in 2021 but still not open to solo creators. Treat like Coursera. |
+| Coursera | Institutional | Partnership required | ❌ Not viable | Requires university/institutional relationship. Not accessible to solo creators. |
+| LinkedIn Learning | Curated | Application + editorial review | ❌ Not viable | Formal author application. No open uploads. |
+| Pluralsight | Curated | Application + selective | ❌ Not viable | Focused on established cert vendors. Selective on topics. |
+| CBT Nuggets | Partnership | Partnership model | ❌ Not viable | Cert-vendor partnership model only. |
+
+**Decision rule:** If a platform lets you upload without an application process, treat it like Udemy. If it requires a formal application or institutional relationship, treat it like Coursera — not worth pursuing as a solo creator.
+
+**Sequencing for video course:**
+1. Launch on Gumroad (or Teachable) at full price — own the margin and customer relationship
+2. Upload to Udemy 2–3 weeks later for passive discovery traffic
+3. Revisit all other platforms only if/when you have significant traction and inbound interest
+
+---
+
 ## MONTHLY COSTS
 
 | Service | Cost | Billing |
