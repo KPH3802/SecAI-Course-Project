@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecAI+ Study Materials — Free Anki Deck | Kevin P. Heaney</title>
+  <meta name="description" content="Get the only CompTIA SecurityAI+ (CY0-001) study materials built by someone who just passed the exam. Free Anki deck — 50 scenario-based questions across all 4 domains." />
+  <meta property="og:title" content="Free CompTIA SecAI+ Anki Deck — Built From Inside the Exam" />
+  <meta property="og:description" content="50 scenario-based flashcards mapped to every CY0-001 exam objective. Written by Kevin P. Heaney, who passed SecAI+ in February 2026." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────── */
+    :root {
+      --bg:          #080910;
+      --surface:     #0f1018;
+      --surface-2:   #161824;
+      --border:      rgba(255,255,255,0.07);
+      --border-glow: rgba(0,229,160,0.25);
+
+      --mint:        #00e5a0;
+      --mint-dim:    rgba(0,229,160,0.12);
+      --mint-mid:    rgba(0,229,160,0.40);
+      --amber:       #f5a623;
+      --amber-dim:   rgba(245,166,35,0.12);
+
+      --text-primary:   #f0f0f5;
+      --text-secondary: #8a8da8;
+      --text-muted:     #4a4d68;
+
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-mono:  'IBM Plex Mono', 'Courier New', monospace;
+      --font-sans:  'IBM Plex Sans', system-ui, sans-serif;
+
+      --radius: 4px;
+      --radius-lg: 10px;
+    }
+
+    /* ─────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle grid texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--mint); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─────────────────────────────────────────
+       LAYOUT HELPERS
+    ───────────────────────────────────────── */
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section { padding: 96px 0; }
+    .section--tight { padding: 64px 0; }
+
+    /* ─────────────────────────────────────────
+       LABEL CHIP
+    ───────────────────────────────────────── */
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mint);
+      border: 1px solid var(--mint-mid);
+      background: var(--mint-dim);
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+    .label::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--mint);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ─────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8,9,16,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav__logo {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+    }
+    .nav__logo span { color: var(--mint); }
+    .nav__cta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--mint);
+      border: 1px solid var(--mint-mid);
+      padding: 7px 16px;
+      border-radius: var(--radius);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .nav__cta:hover {
+      background: var(--mint-dim);
+      box-shadow: 0 0 16px var(--border-glow);
+      text-decoration: none;
+    }
+
+    /* ─────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────── */
+    .hero {
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Radial glow behind hero text */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 600px;
+      background: radial-gradient(ellipse at center, rgba(0,229,160,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero__eyebrow {
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.1s;
+    }
+
+    .hero__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      max-width: 820px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.2s;
+    }
+    .hero__headline em {
+      font-style: italic;
+      color: var(--mint);
+    }
+
+    .hero__sub {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.35s;
+    }
+
+    /* ── Form box ── */
+    .hero__form-wrap {
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.5s;
+    }
+
+    .form-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 0 60px rgba(0,229,160,0.04), 0 24px 48px rgba(0,0,0,0.4);
+    }
+
+    .form-box__title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .form-box__what {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .form-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .form-item__icon {
+      width: 20px; height: 20px;
+      background: var(--mint-dim);
+      border: 1px solid var(--mint-mid);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+    }
+
+    /* ConvertKit embed slot */
+    .ck-embed-slot {
+      /* ConvertKit will inject its form here.
+         Replace this placeholder div with your CK embed script. */
+    }
+
+    /* Styled fallback form (shows until CK is connected) */
+    .form-fallback { display: flex; flex-direction: column; gap: 10px; }
+
+    .form-fallback input[type="text"],
+    .form-fallback input[type="email"] {
+      width: 100%;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-fallback input:focus {
+      border-color: var(--mint-mid);
+      box-shadow: 0 0 0 3px rgba(0,229,160,0.08);
+    }
+    .form-fallback input::placeholder { color: var(--text-muted); }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: var(--mint);
+      color: #080910;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+      box-shadow: 0 0 24px rgba(0,229,160,0.35);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* ── Stats row ── */
+    .hero__stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.65s;
+    }
+    .stat__num {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .stat__num span { color: var(--mint); }
+    .stat__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ─────────────────────────────────────────
+       DIVIDER
+    ───────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       WHAT YOU GET
+    ───────────────────────────────────────── */
+    .section-header {
+      margin-bottom: 56px;
+    }
+    .section-header .label { margin-bottom: 20px; }
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.15;
+      max-width: 600px;
+    }
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      max-width: 520px;
+      margin-top: 14px;
+      font-weight: 300;
+    }
+
+    .deck-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .deck-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .deck-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 0 30px rgba(0,229,160,0.05);
+      transform: translateY(-2px);
+    }
+    .deck-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .deck-card--d1::before { background: #00e5a0; }
+    .deck-card--d2::before { background: #3b9eff; }
+    .deck-card--d3::before { background: #f5a623; }
+    .deck-card--d4::before { background: #cc6af5; }
+
+    .deck-card__domain {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .deck-card__title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .deck-card__count {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .deck-card--d1 .deck-card__count { color: #00e5a0; }
+    .deck-card--d2 .deck-card__count { color: #3b9eff; }
+    .deck-card--d3 .deck-card__count { color: #f5a623; }
+    .deck-card--d4 .deck-card__count { color: #cc6af5; }
+
+    .deck-card__sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Features list */
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .features-list li::before {
+      content: '→';
+      color: var(--mint);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ─────────────────────────────────────────
+       WHY THIS IS DIFFERENT
+    ───────────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .callout-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--mint);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+    }
+    .callout-box p {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--text-primary);
+    }
+    .callout-box cite {
+      display: block;
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--mint);
+      margin-top: 16px;
+    }
+
+    .point-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .point-list li {
+      padding-left: 20px;
+      border-left: 2px solid var(--border);
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .point-list li strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    /* ─────────────────────────────────────────
+       ABOUT
+    ───────────────────────────────────────── */
+    .about-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 640px) {
+      .about-inner { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    .about-avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: var(--surface-2);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 40px;
+      color: var(--mint);
+      flex-shrink: 0;
+    }
+
+    .about-name {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+    .about-role {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--mint);
+      margin-bottom: 16px;
+    }
+    .about-bio {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    .certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .cert-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      border-radius: 2px;
+      background: var(--surface-2);
+    }
+    .cert-badge--highlight {
+      color: var(--mint);
+      border-color: var(--mint-mid);
+      background: var(--mint-dim);
+    }
+
+    /* ─────────────────────────────────────────
+       COMING SOON / PAID TIERS
+    ───────────────────────────────────────── */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .tier-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+    }
+    .tier-card--coming {
+      opacity: 0.6;
+    }
+    .tier-status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .tier-status--live {
+      color: var(--mint);
+      background: var(--mint-dim);
+      border: 1px solid var(--mint-mid);
+    }
+    .tier-status--soon {
+      color: var(--text-muted);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+    }
+    .tier-card h3 {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .tier-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .tier-price {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      color: var(--text-primary);
+      margin-top: 16px;
+    }
+    .tier-price span { font-size: 13px; color: var(--text-muted); }
+
+    /* ─────────────────────────────────────────
+       BOTTOM CTA
+    ───────────────────────────────────────── */
+    .cta-section {
+      padding: 96px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,229,160,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 48px);
+      max-width: 600px;
+      margin: 0 auto 16px;
+      line-height: 1.2;
+    }
+    .cta-section p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      max-width: 440px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+    }
+    .cta-form-wrap {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-logo span { color: var(--mint); }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--mint); text-decoration: none; }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+      width: 100%;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    /* ─────────────────────────────────────────
+       ANIMATIONS
+    ───────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero { padding: 120px 0 80px; }
+      .hero__stats { gap: 28px; }
+      .section { padding: 64px 0; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─────────────────────────────────────────
+       CONVERTKIT OVERRIDES
+    ───────────────────────────────────────── */
+    /* Hide the Monterey template header image panel */
+    .formkit-form[data-uid="74f3166c72"] .formkit-column:first-of-type {
+      display: none !important;
+    }
+    .formkit-form[data-uid="74f3166c72"] {
+      max-width: 100% !important;
+      background: transparent !important;
+    }
+    .formkit-form[data-uid="74f3166c72"] [data-style="image"] {
+      display: block;
+    }
+    .formkit-form[data-uid="74f3166c72"] .formkit-column:last-of-type {
+      padding: 0 !important;
+      background: transparent !important;
+    }
+    .formkit-form[data-uid="74f3166c72"] .formkit-input {
+      background: var(--surface-2) !important;
+      border: 1px solid var(--border) !important;
+      color: var(--text-primary) !important;
+      border-radius: var(--radius) !important;
+      font-family: var(--font-sans) !important;
+      font-size: 14px !important;
+      padding: 12px 14px !important;
+    }
+    .formkit-form[data-uid="74f3166c72"] .formkit-submit {
+      background: var(--mint) !important;
+      color: #080910 !important;
+      font-family: var(--font-mono) !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase !important;
+      border-radius: var(--radius) !important;
+      width: 100% !important;
+    }
+    .formkit-form[data-uid="74f3166c72"] .formkit-powered-by-convertkit-container {
+      display: none !important;
+    }
+    .formkit-form[data-uid="74f3166c72"] .formkit-alert-error {
+      background: rgba(242,100,59,0.1) !important;
+      border-color: #f2643b !important;
+      color: #f2643b !important;
+    }
+
+    /* ─────────────────────────────────────────
+       SCROLLBAR
+    ───────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav__logo">SecAI<span>+</span> Study</div>
+      <a href="#get-deck" class="nav__cta">Get Free Deck →</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container">
+
+      <div class="hero__eyebrow">
+        <span class="label">CY0-001 · Free Study Materials</span>
+      </div>
+
+      <h1 class="hero__headline">
+        Study materials built<br/><em>inside</em> the exam room.
+      </h1>
+
+      <p class="hero__sub">
+        The only CompTIA SecurityAI+ flashcard deck written by someone who 
+        just passed CY0-001. 50 scenario-based questions. Every domain covered. 
+        Free — no strings.
+      </p>
+
+      <div class="hero__form-wrap" id="get-deck">
+        <div class="form-box">
+          <div class="form-box__title">// Get the free Anki deck</div>
+          <div class="form-box__what">
+            <div class="form-item">
+              <div class="form-item__icon">✓</div>
+              50 scenario-based flashcards
+            </div>
+            <div class="form-item">
+              <div class="form-item__icon">✓</div>
+              All 4 exam domains covered
+            </div>
+            <div class="form-item">
+              <div class="form-item__icon">✓</div>
+              Exam tips on every card
+            </div>
+            <div class="form-item">
+              <div class="form-item__icon">✓</div>
+              "Why wrong" explanations included
+            </div>
+          </div>
+
+          <!-- ════════════════════════════════════════════════
+               CONVERTKIT EMBED — replace everything between
+               the comment tags with your CK embed code.
+               See SETUP.md for instructions.
+          ═════════════════════════════════════════════════ -->
+          <div class="ck-embed-slot">
+            <!-- BEGIN CONVERTKIT FORM -->
+            <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9165815/subscriptions" style="background-color: rgb(247, 247, 247); border-radius: 0px;" class="seva-form formkit-form" method="post" data-sv-form="9165815" data-uid="74f3166c72" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="image"><div data-element="column" class="formkit-column" style="background-color: rgb(51, 51, 51); height: 480px;"><div style="background-image: url(&quot;//pages.convertkit.com/assets/monterey/bg.jpg&quot;); opacity: 0.3;" class="formkit-background"></div><div class="formkit-header" style="color: rgb(255, 255, 255); font-size: 36px; font-weight: 700;" data-element="header"><h2>Join the newsletter</h2></div><div class="formkit-subheader" style="color: rgb(255, 255, 255); font-size: 22px;" data-element="subheader">Subscribe to get our latest content by email.</div></div><div data-element="column" class="formkit-column"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(77, 77, 77); border-color: rgb(227, 227, 227); border-radius: 0px; font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 51); border-radius: 0px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Subscribe</span></button></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a></div></div></div></form>
+            <!-- END CONVERTKIT FORM -->
+          </div>
+
+          <p class="form-note">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__num">50<span>+</span></div>
+          <div class="stat__label">Flashcards</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">4</div>
+          <div class="stat__label">Exam Domains</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num"><span>#</span>1</div>
+          <div class="stat__label">Earliest Resource Available</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">Feb<span>'26</span></div>
+          <div class="stat__label">Exam Passed</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── WHAT YOU GET ── -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <div class="label">The Deck</div>
+        <h2>50 questions mapped to the real exam.</h2>
+        <p>Weighted to match actual CY0-001 domain percentages — not randomly distributed like most free decks.</p>
+      </div>
+
+      <div class="deck-grid">
+        <div class="deck-card deck-card--d1 reveal">
+          <div class="deck-card__domain">Domain 1</div>
+          <div class="deck-card__title">AI Concepts &amp; Foundational Knowledge</div>
+          <div class="deck-card__count">10</div>
+          <div class="deck-card__sub">cards · 20% exam weight</div>
+        </div>
+        <div class="deck-card deck-card--d2 reveal">
+          <div class="deck-card__domain">Domain 2</div>
+          <div class="deck-card__title">Threats, Attacks &amp; Security Principles</div>
+          <div class="deck-card__count">18</div>
+          <div class="deck-card__sub">cards · 36% exam weight</div>
+        </div>
+        <div class="deck-card deck-card--d3 reveal">
+          <div class="deck-card__domain">Domain 3</div>
+          <div class="deck-card__title">Secure AI Development &amp; Implementation</div>
+          <div class="deck-card__count">10</div>
+          <div class="deck-card__sub">cards · 22% exam weight</div>
+        </div>
+        <div class="deck-card deck-card--d4 reveal">
+          <div class="deck-card__domain">Domain 4</div>
+          <div class="deck-card__title">Governance, Risk &amp; Compliance</div>
+          <div class="deck-card__count">12</div>
+          <div class="deck-card__sub">cards · 24% exam weight</div>
+        </div>
+      </div>
+
+      <ul class="features-list reveal">
+        <li>Every card includes an exam tip drawn directly from the CY0-001 objectives</li>
+        <li>Wrong answers include explanations — not just the right answer, but <em>why</em> the others fail</li>
+        <li>Scenario-based format mirrors actual exam question structure, not textbook definitions</li>
+        <li>Color-coded by domain so you can filter by weak area in Anki</li>
+        <li>Works with Anki desktop (free) and AnkiMobile — import takes 30 seconds</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── WHY DIFFERENT ── -->
+  <section class="section">
+    <div class="container">
+
+      <div class="why-grid">
+
+        <div class="reveal">
+          <div class="label" style="margin-bottom: 20px;">Why It's Different</div>
+          <h2 style="font-family: var(--font-serif); font-size: clamp(26px, 3.5vw, 42px); line-height: 1.2; margin-bottom: 20px;">
+            Most study resources are guessing. This one isn't.
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.7; font-weight: 300; margin-bottom: 32px;">
+            CompTIA SecurityAI+ launched in early 2026. There are almost no study materials yet — 
+            which means most decks floating around were built from the objectives document alone, 
+            without ever sitting the exam.
+          </p>
+          <ul class="point-list">
+            <li>
+              <strong>Exam-verified content</strong>
+              Built after passing CY0-001 in February 2026 — the question styles, domain weights, and tricky distractors are based on the actual test.
+            </li>
+            <li>
+              <strong>OWASP LLM Top 10 &amp; STRIDE emphasis</strong>
+              The real exam hammers these frameworks. This deck does too.
+            </li>
+            <li>
+              <strong>Distractor-aware</strong>
+              The exam uses plausible-sounding but fabricated terminology to trick you. These cards teach you to recognize the real vocabulary.
+            </li>
+            <li>
+              <strong>Performance-based question awareness</strong>
+              WAF controls, prompt firewall matching, model vs. cloud controls — topics the exam tests in PBQs that most decks skip entirely.
+            </li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="callout-box">
+            <p>"The exam uses plausible-sounding but fabricated terminology as distractors. If you don't know the exact official vocabulary, you'll pick the wrong answer with confidence."</p>
+            <cite>— Kevin P. Heaney, CY0-001 Exam Debrief</cite>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── ABOUT ── -->
+  <section class="section section--tight">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <div class="label">About</div>
+      </div>
+
+      <div class="about-inner reveal">
+        <div class="about-avatar">KH</div>
+        <div>
+          <div class="about-name">Kevin P. Heaney</div>
+          <div class="about-role">Enterprise Firewall Engineer · CY0-001 Certified</div>
+          <p class="about-bio">
+            I work in the firewall department at a large enterprise, hold CompTIA Security+, 
+            and hold a Data Science certificate from Washington University. I passed the CompTIA 
+            SecurityAI+ exam (CY0-001) in February 2026 — one of the first certifications 
+            of its kind, sitting at the intersection of AI security and traditional enterprise defense.<br/><br/>
+            I'm building these study materials because I wish they had existed when I was preparing. 
+            Everything here is drawn from real exam experience, not from reading the objectives PDF.
+          </p>
+          <div class="certs">
+            <span class="cert-badge cert-badge--highlight">CompTIA SecAI+ CY0-001</span>
+            <span class="cert-badge">CompTIA Security+</span>
+            <span class="cert-badge">WashU Data Science</span>
+            <span class="cert-badge">Enterprise Firewall Engineering</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── COMING SOON ── -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <div class="label">What's Coming</div>
+        <h2>The free deck is just the start.</h2>
+        <p>Subscribers get early access and launch pricing on every paid product.</p>
+      </div>
+
+      <div class="tiers-grid">
+        <div class="tier-card reveal">
+          <div class="tier-status tier-status--live">Live Now — Free</div>
+          <h3>Anki Flashcard Deck</h3>
+          <p>50 scenario-based cards across all 4 CY0-001 domains. Exam tips, wrong-answer explanations, and domain color-coding.</p>
+          <div class="tier-price">$0 <span>/ free forever</span></div>
+        </div>
+        <div class="tier-card tier-card--coming reveal">
+          <div class="tier-status tier-status--soon">Coming Soon</div>
+          <h3>Full Practice Exam</h3>
+          <p>90 questions weighted to exam distribution. Timed format, answer keys, and explanations for every question.</p>
+          <div class="tier-price">$19–29 <span>/ one-time</span></div>
+        </div>
+        <div class="tier-card tier-card--coming reveal">
+          <div class="tier-status tier-status--soon">Coming Soon</div>
+          <h3>Complete Study Guide</h3>
+          <p>Domain-by-domain coverage with real-world analogies, exam traps, framework breakdowns, and mini quizzes.</p>
+          <div class="tier-price">$39–49 <span>/ one-time</span></div>
+        </div>
+        <div class="tier-card tier-card--coming reveal">
+          <div class="tier-status tier-status--soon">Coming Soon</div>
+          <h3>Video Course</h3>
+          <p>Full video course on Udemy and Teachable. Module-by-module, with slides, labs, and a passing guarantee.</p>
+          <div class="tier-price">$99–199 <span>/ lifetime access</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── BOTTOM CTA ── -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Start studying with the deck today.</h2>
+      <p>Free. Instant download. Built from inside the actual exam.</p>
+
+      <div class="cta-form-wrap">
+        <div class="form-box">
+          <!-- ═══ CONVERTKIT EMBED (bottom) — same as above ═══ -->
+          <div class="ck-embed-slot">
+            <!-- BEGIN CONVERTKIT FORM -->
+            <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9165815/subscriptions" style="background-color: rgb(247, 247, 247); border-radius: 0px;" class="seva-form formkit-form" method="post" data-sv-form="9165815" data-uid="74f3166c72" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="image"><div data-element="column" class="formkit-column" style="background-color: rgb(51, 51, 51); height: 480px;"><div style="background-image: url(&quot;//pages.convertkit.com/assets/monterey/bg.jpg&quot;); opacity: 0.3;" class="formkit-background"></div><div class="formkit-header" style="color: rgb(255, 255, 255); font-size: 36px; font-weight: 700;" data-element="header"><h2>Join the newsletter</h2></div><div class="formkit-subheader" style="color: rgb(255, 255, 255); font-size: 22px;" data-element="subheader">Subscribe to get our latest content by email.</div></div><div data-element="column" class="formkit-column"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(77, 77, 77); border-color: rgb(227, 227, 227); border-radius: 0px; font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(51, 51, 51); border-radius: 0px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Subscribe</span></button></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a></div></div></div></form>
+            <!-- END CONVERTKIT FORM -->
+          </div>
+          <p class="form-note">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">SecAI<span>+</span> Study · Kevin P. Heaney</div>
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/kevin-heaney" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/KPH3802" target="_blank" rel="noopener">GitHub</a>
+          <!-- Add YouTube link when channel is live -->
+        </div>
+        <div class="footer-copy">
+          © 2026 Kevin P. Heaney. CompTIA SecAI+ (CY0-001) is a trademark of CompTIA. 
+          This site is independently produced and not affiliated with CompTIA.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCROLL REVEAL JS ── -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
