@@ -25,7 +25,9 @@
 | 3 — Video Course | Scripts — Domain 1 + 2 | Apr 25, 2026 | ⬜ Not Started |
 | 3 — Video Course | Scripts — Domain 3 + 4 | May 2, 2026 | ⬜ Not Started |
 | 3 — Video Course | Recording complete | May 16, 2026 | ⬜ Not Started |
-| 3 — Video Course | Udemy/Coursera launch | May 23, 2026 | ⬜ Not Started |
+| 3 — Video Course | Gumroad launch (full price, primary) | May 23, 2026 | ⬜ Not Started |
+| 4 — Udemy (secondary) | Upload course to Udemy | Jun 7, 2026 | ⬜ Not Started |
+| 4 — Udemy (secondary) | Optimize listing (SEO, thumbnail, preview) | Jun 7, 2026 | ⬜ Not Started |
 
 ---
 
@@ -125,8 +127,14 @@
 | Module outlines (all 4 domains) | ⬜ Not Started | Target: Apr 18, 2026 |
 | Domain scripts (all 4) | ⬜ Not Started | Target: May 2, 2026 |
 | Recording | ⬜ Not Started | Target: May 16, 2026 |
-| Platform decision (Udemy vs Coursera) | ⬜ Not Started | Decide by Apr 18 |
-| Launch | ⬜ Not Started | Target: May 23, 2026 |
+| Gumroad launch — full price ($149–199) | ⬜ Not Started | Target: May 23, 2026 — primary revenue |
+| Udemy upload — secondary distribution | ⬜ Not Started | Target: Jun 7, 2026 — passive discovery channel |
+| Udemy listing optimization (SEO, thumbnail, preview clip) | ⬜ Not Started | Target: Jun 7, 2026 |
+
+**Platform strategy:**
+- **Gumroad first** — full price, ~90% margin, you own the customer relationship. Launch here.
+- **Udemy second** — marketplace with built-in search traffic for cert prep. Expect heavy discounting ($9.99 promos). Use for volume/visibility, not margin.
+- **Coursera** — requires institutional partnership. Not viable for solo creators. Removed from plan.
 
 ---
 
