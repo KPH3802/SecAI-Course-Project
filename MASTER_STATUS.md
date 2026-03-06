@@ -1,6 +1,6 @@
 # SecAI+ Course Project — Master Status
 
-**Last Updated:** March 6, 2026
+**Last Updated:** March 6, 2026 (afternoon)
 **Owner:** Kevin P. Heaney
 **GitHub (public):** https://github.com/KPH3802/SecAI-Course-Project
 **GitHub (private production):** https://github.com/KPH3802/SecAI_Course_Production
@@ -19,7 +19,7 @@
 | 2 — Paid Tier | Study guide (all 4 domains) | Mar 6, 2026 | ✅ Done — v1 drafted, committed to private repo |
 | 2 — Paid Tier | Domain quiz pack (4 x 25 Qs) | Mar 14, 2026 | ⬜ Not Started |
 | 2 — Paid Tier | Practice exam (150 questions) | Mar 21, 2026 | ⬜ Not Started |
-| 2 — Paid Tier | Gumroad listings — all paid products | Mar 22, 2026 | ⏳ Account created, no listings yet |
+| 2 — Paid Tier | Gumroad listings — all paid products | Mar 22, 2026 | ⏳ Study guide live — quiz pack + exam pending |
 | 2 — Paid Tier | Bundle listing (guide + quizzes + exam) | Mar 22, 2026 | ⬜ Not Started |
 | 3 — Video Course | Module outlines (all domains) | Apr 18, 2026 | ⬜ Not Started |
 | 3 — Video Course | Scripts — Domain 1 + 2 | Apr 25, 2026 | ⬜ Not Started |
@@ -46,7 +46,9 @@
 | DNS — SPF TXT Record | ✅ Configured | v=spf1 include:spf.privateemail.com ~all |
 | DNS — DKIM Record | ✅ Auto-configured | Added by Namecheap Private Email |
 | ConvertKit sender address | ✅ Verified | kevin@secaiplus.com set as default sender |
-| Gumroad account | ⏳ Account created | No product listings yet — needed before Mar 22 |
+| X (Twitter) account | ⬜ Not Started | Low priority — LinkedIn is primary. Create when time allows. |
+| Gumroad account | ✅ Fully configured | Profile live at secaiplus.gumroad.com — payouts connected (weekly, bank account) |
+| Gumroad — Study Guide listing | ✅ Live | secaiplus.gumroad.com/l/secaiplus-study-guide — $47, Education category, tags set |
 
 ---
 
@@ -77,6 +79,7 @@
 | Item | Status | Notes |
 |------|--------|-------|
 | "I passed SecAI+" post | ✅ Published | Posted Mar 2, 2026 |
+| Study guide announcement post | ⏳ Scheduled | Scheduled Tue Mar 10 9AM — Gumroad link goes in first comment (calendar reminder set) |
 
 ### YouTube Video #1
 | Item | Status | Notes |
@@ -133,7 +136,7 @@
 | Committed to private repo | ✅ Done | SecAI_Course_Production/02_StudyGuide/ — Mar 6, 2026 |
 | Kevin review & corrections | ⬜ Not Started | Review against actual exam experience |
 | Convert to PDF for sale | ⬜ Not Started | Final format for Gumroad |
-| Gumroad listing | ⬜ Not Started | **Target price: $47** |
+| Gumroad listing | ✅ Live | secaiplus.gumroad.com/l/secaiplus-study-guide — $47 |
 | **Target date** | **Mar 14, 2026** | Ahead of original Apr 5 target |
 
 ### Video Course
