@@ -1,6 +1,6 @@
 # SecAI+ Course Project — Master Status
 
-**Last Updated:** March 5, 2026
+**Last Updated:** March 6, 2026
 **Owner:** Kevin P. Heaney
 **GitHub (public):** https://github.com/KPH3802/SecAI-Course-Project
 **GitHub (private production):** https://github.com/KPH3802/SecAI_Course_Production
@@ -16,11 +16,11 @@
 | 1 — Free Tier | LinkedIn post | Mar 2, 2026 | ✅ Done |
 | 1 — Free Tier | YouTube script | Mar 7, 2026 | ✅ Done |
 | 1 — Free Tier | YouTube video recorded & uploaded | Mar 14, 2026 | ⬜ Not Started |
+| 2 — Paid Tier | Study guide (all 4 domains) | Mar 6, 2026 | ✅ Done — v1 drafted, committed to private repo |
+| 2 — Paid Tier | Domain quiz pack (4 x 25 Qs) | Mar 14, 2026 | ⬜ Not Started |
 | 2 — Paid Tier | Practice exam (150 questions) | Mar 21, 2026 | ⬜ Not Started |
-| 2 — Paid Tier | Gumroad listing — practice exam | Mar 22, 2026 | ⬜ Not Started |
-| 2 — Paid Tier | Study guide (all 4 domains) | Apr 4, 2026 | ⬜ Not Started |
-| 2 — Paid Tier | Gumroad listing — study guide | Apr 5, 2026 | ⬜ Not Started |
-| 2 — Paid Tier | Bundle listing (exam + guide) | Apr 5, 2026 | ⬜ Not Started |
+| 2 — Paid Tier | Gumroad listings — all paid products | Mar 22, 2026 | ⏳ Account created, no listings yet |
+| 2 — Paid Tier | Bundle listing (guide + quizzes + exam) | Mar 22, 2026 | ⬜ Not Started |
 | 3 — Video Course | Module outlines (all domains) | Apr 18, 2026 | ⬜ Not Started |
 | 3 — Video Course | Scripts — Domain 1 + 2 | Apr 25, 2026 | ⬜ Not Started |
 | 3 — Video Course | Scripts — Domain 3 + 4 | May 2, 2026 | ⬜ Not Started |
@@ -46,7 +46,7 @@
 | DNS — SPF TXT Record | ✅ Configured | v=spf1 include:spf.privateemail.com ~all |
 | DNS — DKIM Record | ✅ Auto-configured | Added by Namecheap Private Email |
 | ConvertKit sender address | ✅ Verified | kevin@secaiplus.com set as default sender |
-| Gumroad account | ⬜ Not Started | Needed before paid tier launch — set up before Mar 21 |
+| Gumroad account | ⏳ Account created | No product listings yet — needed before Mar 22 |
 
 ---
 
@@ -94,13 +94,24 @@
 
 ## CONTENT — PAID TIER
 
+### Domain Quiz Pack (NEW PRODUCT)
+| Item | Status | Notes |
+|------|--------|-------|
+| Domain 1 Quiz (25 Qs) | ⬜ Not Started | |
+| Domain 2 Quiz (25 Qs) | ⬜ Not Started | |
+| Domain 3 Quiz (25 Qs) | ⬜ Not Started | |
+| Domain 4 Quiz (25 Qs) | ⬜ Not Started | |
+| Gumroad listing — full pack | ⬜ Not Started | **Target price: $37** |
+| Gumroad listing — single domain | ⬜ Not Started | **Target price: $17 each** |
+| **Target date** | **Mar 14, 2026** | |
+
 ### Practice Exam (150 Questions)
 | Item | Status | Notes |
 |------|--------|-------|
-| Question bank (150 Qs, all 4 domains) | ⬜ Not Started | Build from 50 Anki Qs + 100 new |
+| Question bank (150 Qs, all 4 domains) | ⬜ Not Started | Pull best 100 from domain quizzes + 50 new |
 | Full answer explanations + why-wrong | ⬜ Not Started | |
 | PDF formatting & layout | ⬜ Not Started | |
-| Gumroad listing | ⬜ Not Started | Target price: $19–29 |
+| Gumroad listing | ⬜ Not Started | **Target price: $67** |
 | **Target date** | **Mar 21, 2026** | |
 
 **Domain weighting for 150 questions (match exam %):**
@@ -109,17 +120,21 @@
 - Domain 3 — AI Security Operations: ~41 questions (27%)
 - Domain 4 — Governance, Risk, Compliance: ~35 questions (23%)
 
-### Study Guide PDF
+### Study Guide DOCX
 | Item | Status | Notes |
 |------|--------|-------|
-| Domain 1 — AI Security Fundamentals | ⬜ Not Started | |
-| Domain 2 — Data and Model Security | ⬜ Not Started | Weakest domain — allocate more time |
-| Domain 3 — AI Security Operations | ⬜ Not Started | |
-| Domain 4 — Governance, Risk, Compliance | ⬜ Not Started | ISO numbers section critical |
-| PDF formatting & layout | ⬜ Not Started | |
-| Gumroad listing | ⬜ Not Started | Target price: $39–49 |
-| Bundle listing (exam + guide) | ⬜ Not Started | Target price: $59 |
-| **Target date** | **Apr 5, 2026** | |
+| Domain 1 — AI Concepts & Cybersecurity | ✅ Complete | All concepts, key term tables, exam tips, firewall bridges |
+| Domain 2 — Securing AI Systems | ✅ Complete | Full attack taxonomy, OWASP LLM Top 10, all controls |
+| Domain 3 — AI in Security Operations | ✅ Complete | Use cases, attack vectors, automation |
+| Domain 4 — Governance, Risk, Compliance | ✅ Complete | ISO numbers, frameworks, roles, responsible AI |
+| 40 domain quiz questions embedded | ✅ Complete | 10 per domain with full answer explanations |
+| Quick Reference section | ✅ Complete | ISO numbers, OWASP list, EU AI Act tiers, gateway controls |
+| Professional formatting (callout boxes, tables, header/footer) | ✅ Complete | Navy/teal theme, branded |
+| Committed to private repo | ✅ Done | SecAI_Course_Production/02_StudyGuide/ — Mar 6, 2026 |
+| Kevin review & corrections | ⬜ Not Started | Review against actual exam experience |
+| Convert to PDF for sale | ⬜ Not Started | Final format for Gumroad |
+| Gumroad listing | ⬜ Not Started | **Target price: $47** |
+| **Target date** | **Mar 14, 2026** | Ahead of original Apr 5 target |
 
 ### Video Course
 | Item | Status | Notes |
@@ -150,6 +165,7 @@
 | Confirmed subscribers | ⏳ Growing | Test subscriber confirmed Mar 5 |
 | Launch email — practice exam | ⬜ Not Started | Draft when exam is ready |
 | Launch email — study guide | ⬜ Not Started | Draft when guide is ready |
+| Email nurture sequence (7-day) | ⬜ Not Started | Day 0 welcome, Days 2/5 value, Days 7/10 paid pitches |
 
 ---
 
