@@ -376,6 +376,15 @@
       margin-bottom: 56px;
     }
     .tiers-section-header .header-left { flex: 1; min-width: 260px; }
+    .free-deck-notice {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin: 0 0 28px 0;
+      padding: 14px 18px;
+      border: 1px solid rgba(0,255,163,0.2);
+      border-radius: 8px;
+      background: rgba(0,255,163,0.04);
+    }
     .btn-storefront {
       display: inline-flex;
       align-items: center;
@@ -745,14 +754,14 @@
         Browse All Resources →
       </a>
     </div>
-    <div class="tiers-grid">
-      <div class="tier-card reveal">
-        <div class="tier-status tier-status--live">Live Now — Free</div>
-        <h3>Anki Flashcard Deck</h3>
-        <p>25 scenario-based cards across all 4 CY0-001 domains. Exam tips, wrong-answer explanations, and domain color-coding.</p>
-        <div class="tier-price">$0 <span>/ free forever</span></div>
-        <a href="#get-deck" class="btn-tier btn-tier--free">Get Free Deck →</a>
-      </div>
+
+    <!-- Free deck notice -->
+    <p class="free-deck-notice reveal">
+      Looking for the free Anki deck? Enter your email in the form above or below to receive it instantly.
+    </p>
+
+    <!-- Row 1: Study Guide + Bundles -->
+    <div class="tiers-grid" style="margin-bottom: 20px;">
       <div class="tier-card reveal">
         <div class="tier-status tier-status--live">Live Now</div>
         <h3>Full Study Guide</h3>
@@ -760,6 +769,24 @@
         <div class="tier-price">$59.99 <span>/ one-time</span></div>
         <a href="https://secaiplus.gumroad.com/l/study-guide" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
       </div>
+      <div class="tier-card reveal">
+        <div class="tier-status tier-status--live">Live Now</div>
+        <h3>Practice Exam Bundle</h3>
+        <p>All 3 practice exams (162 questions total) at the best price. Save vs. buying individually.</p>
+        <div class="tier-price">$69.99 <span>/ bundle</span></div>
+        <a href="https://secaiplus.gumroad.com/l/exam-bundle" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
+      </div>
+      <div class="tier-card reveal">
+        <div class="tier-status tier-status--live">Live Now</div>
+        <h3>Complete Bundle</h3>
+        <p>Study guide + all 3 practice exams. Everything you need in one package at the best price.</p>
+        <div class="tier-price">$129.99 <span>/ bundle</span></div>
+        <a href="https://secaiplus.gumroad.com/l/complete-bundle" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
+      </div>
+    </div>
+
+    <!-- Row 2: Individual Practice Exams -->
+    <div class="tiers-grid">
       <div class="tier-card reveal">
         <div class="tier-status tier-status--live">Live Now</div>
         <h3>Practice Exam 1</h3>
@@ -780,20 +807,6 @@
         <p>54 scenario-based questions weighted to actual CY0-001 domain distribution. Timed format with explanations for every question.</p>
         <div class="tier-price">$29.99 <span>/ one-time</span></div>
         <a href="https://secaiplus.gumroad.com/l/practice-exam-3" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
-      </div>
-      <div class="tier-card reveal">
-        <div class="tier-status tier-status--live">Live Now</div>
-        <h3>Practice Exam Bundle</h3>
-        <p>All 3 practice exams (162 questions total) at the best price. Save vs. buying individually.</p>
-        <div class="tier-price">$69.99 <span>/ bundle</span></div>
-        <a href="https://secaiplus.gumroad.com/l/exam-bundle" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
-      </div>
-      <div class="tier-card reveal">
-        <div class="tier-status tier-status--live">Live Now</div>
-        <h3>Complete Bundle</h3>
-        <p>Study guide + all 3 practice exams. Everything you need in one package at the best price.</p>
-        <div class="tier-price">$129.99 <span>/ bundle</span></div>
-        <a href="https://secaiplus.gumroad.com/l/complete-bundle" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
       </div>
     </div>
   </div>
