@@ -418,6 +418,9 @@
       text-decoration: none;
     }
     .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .tiers-grid--4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 1024px) { .tiers-grid--4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .tiers-grid--4 { grid-template-columns: 1fr; } }
     .tier-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -798,8 +801,15 @@
       Looking for the free Anki deck? Enter your email in the form above or below to receive it instantly.
     </p>
 
-    <!-- Row 1: Study Guide + Bundles -->
-    <div class="tiers-grid" style="margin-bottom: 20px;">
+    <!-- Row 1: Anki Deck + Study Guide + Bundles -->
+    <div class="tiers-grid tiers-grid--4" style="margin-bottom: 20px;">
+      <div class="tier-card reveal">
+        <div class="tier-status tier-status--live">Live Now</div>
+        <h3>Premium Anki Deck</h3>
+        <p>150 original scenario-based flashcards covering all 4 CY0-001 domains. Exam tips and "why wrong" explanations on every card.</p>
+        <div class="tier-price">$49.99 <span>/ one-time</span></div>
+        <a href="https://secaiplus.gumroad.com/l/premium-deck" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
+      </div>
       <div class="tier-card reveal">
         <div class="tier-status tier-status--live">Live Now</div>
         <h3>Full Study Guide</h3>
