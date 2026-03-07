@@ -536,9 +536,9 @@
     .formkit-form[data-uid="74f3166c72"] [data-style="image"] { display: block; }
     .formkit-form[data-uid="74f3166c72"] .formkit-column:last-of-type { padding: 0 !important; background: transparent !important; }
     .formkit-form[data-uid="74f3166c72"] .formkit-input {
-      background: #1e2235 !important;
+      background: #ffffff !important;
       border: 1.5px solid rgba(0,229,160,0.35) !important;
-      color: var(--text-primary) !important;
+      color: #111 !important;
       border-radius: var(--radius) !important;
       font-family: var(--font-sans) !important;
       font-size: 15px !important;
@@ -875,6 +875,21 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script>
+  document.querySelectorAll('a[href="#get-deck"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.getElementById('get-deck');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function() {
+          var input = target.querySelector('input[type="email"], input.formkit-input');
+          if (input) input.focus();
+        }, 600);
+      }
+    });
+  });
 </script>
 </body>
 </html>
