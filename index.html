@@ -141,6 +141,19 @@
       color: var(--mint);
       text-decoration: none;
     }
+    .nav__shop {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--mint);
+      padding: 7px 16px;
+      border-radius: var(--radius);
+      transition: color 0.2s, text-decoration 0.2s;
+      font-weight: 500;
+    }
+    .nav__shop:hover {
+      color: #fff;
+      text-decoration: none;
+    }
     .nav__cta {
       font-family: var(--font-mono);
       font-size: 12px;
@@ -523,13 +536,18 @@
     .formkit-form[data-uid="74f3166c72"] [data-style="image"] { display: block; }
     .formkit-form[data-uid="74f3166c72"] .formkit-column:last-of-type { padding: 0 !important; background: transparent !important; }
     .formkit-form[data-uid="74f3166c72"] .formkit-input {
-      background: var(--surface-2) !important;
-      border: 1px solid var(--border) !important;
+      background: #1e2235 !important;
+      border: 1.5px solid rgba(0,229,160,0.35) !important;
       color: var(--text-primary) !important;
       border-radius: var(--radius) !important;
       font-family: var(--font-sans) !important;
-      font-size: 14px !important;
-      padding: 12px 14px !important;
+      font-size: 15px !important;
+      padding: 14px 16px !important;
+    }
+    .formkit-form[data-uid="74f3166c72"] .formkit-input:focus {
+      border-color: var(--mint) !important;
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(0,229,160,0.15) !important;
     }
     .formkit-form[data-uid="74f3166c72"] .formkit-submit {
       background: var(--mint) !important;
@@ -564,6 +582,7 @@
     <div class="nav__logo">SecAI<span>+</span> Study</div>
     <div class="nav__actions">
       <a href="https://secaiplus.gumroad.com" target="_blank" rel="noopener" class="nav__store">Browse All Resources →</a>
+      <a href="#products" class="nav__shop">Shop Now →</a>
       <a href="#get-deck" class="nav__cta">Get Free Deck →</a>
     </div>
   </div>
@@ -742,7 +761,7 @@
 <hr class="divider" />
 
 <!-- ── STUDY MATERIALS / TIERS ── -->
-<section class="section">
+<section class="section" id="products">
   <div class="container">
     <div class="tiers-section-header reveal">
       <div class="header-left">
