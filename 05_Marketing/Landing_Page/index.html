@@ -612,6 +612,14 @@
       border-radius: var(--radius-lg);
       padding: 28px;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .tier-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 0 30px rgba(0,229,160,0.06);
+      transform: translateY(-2px);
     }
     .tier-card--coming {
       opacity: 0.6;
@@ -646,14 +654,47 @@
       font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.6;
+      flex: 1;
     }
     .tier-price {
       font-family: var(--font-mono);
       font-size: 22px;
       color: var(--text-primary);
       margin-top: 16px;
+      margin-bottom: 16px;
     }
     .tier-price span { font-size: 13px; color: var(--text-muted); }
+    .btn-tier {
+      display: block;
+      width: 100%;
+      background: var(--mint);
+      color: #080910;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+      margin-top: auto;
+    }
+    .btn-tier:hover {
+      opacity: 0.9;
+      box-shadow: 0 0 20px rgba(0,229,160,0.3);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .btn-tier--free {
+      background: transparent;
+      color: var(--mint);
+      border: 1px solid var(--mint-mid);
+    }
+    .btn-tier--free:hover {
+      background: var(--mint-dim);
+      box-shadow: 0 0 16px var(--border-glow);
+    }
 
     /* ─────────────────────────────────────────
        BOTTOM CTA
@@ -1049,37 +1090,72 @@
         <p>Everything available now on Gumroad — built from inside the actual exam.</p>
       </div>
 
+      <!-- Row 1: Core products -->
       <div class="tiers-grid">
         <div class="tier-card reveal">
           <div class="tier-status tier-status--live">Live Now — Free</div>
           <h3>Anki Flashcard Deck</h3>
           <p>25 scenario-based cards across all 4 CY0-001 domains. Exam tips, wrong-answer explanations, and domain color-coding.</p>
           <div class="tier-price">$0 <span>/ free forever</span></div>
+          <a href="#get-deck" class="btn-tier btn-tier--free">Get Free Deck →</a>
         </div>
         <div class="tier-card reveal">
           <div class="tier-status tier-status--live">Live Now</div>
           <h3>Premium Anki Deck</h3>
           <p>150+ scenario-based cards across all 4 domains. Deeper coverage, more distractors, and advanced exam tips.</p>
           <div class="tier-price">$49.99 <span>/ one-time</span></div>
+          <a href="https://secaiplus.gumroad.com/l/premium-deck" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
         </div>
         <div class="tier-card reveal">
           <div class="tier-status tier-status--live">Live Now</div>
           <h3>Complete Study Guide</h3>
           <p>43 pages of domain-by-domain coverage. Real-world analogies, exam traps, OWASP LLM Top 10, STRIDE, and framework breakdowns.</p>
           <div class="tier-price">$59.99 <span>/ one-time</span></div>
-        </div>
-        <div class="tier-card reveal">
-          <div class="tier-status tier-status--live">Live Now</div>
-          <h3>Practice Exams</h3>
-          <p>Three full-length exams — 54 questions each, weighted to match actual CY0-001 domain percentages. Answer keys and explanations included.</p>
-          <div class="tier-price">$29.99 <span>/ each &nbsp;·&nbsp; Bundle from $74.99</span></div>
+          <a href="https://secaiplus.gumroad.com/l/study-guide" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
         </div>
         <div class="tier-card reveal">
           <div class="tier-status tier-status--live">Live Now</div>
           <h3>Complete Bundle</h3>
           <p>Study Guide + all 3 Practice Exams. Everything you need to pass CY0-001 — $20 off vs. buying separately.</p>
           <div class="tier-price">$129.99 <span>/ one-time</span></div>
+          <a href="https://secaiplus.gumroad.com/l/complete-bundle" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
         </div>
+      </div>
+
+      <!-- Row 2: Individual Practice Exams + Bundle -->
+      <div class="tiers-grid" style="margin-top: 16px;">
+        <div class="tier-card reveal">
+          <div class="tier-status tier-status--live">Live Now</div>
+          <h3>Practice Exam 1</h3>
+          <p>54 scenario-based questions weighted to actual CY0-001 domain distribution. Timed format with explanations for every question.</p>
+          <div class="tier-price">$29.99 <span>/ one-time</span></div>
+          <a href="https://secaiplus.gumroad.com/l/practice-exam-1" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
+        </div>
+        <div class="tier-card reveal">
+          <div class="tier-status tier-status--live">Live Now</div>
+          <h3>Practice Exam 2</h3>
+          <p>54 scenario-based questions weighted to actual CY0-001 domain distribution. Timed format with explanations for every question.</p>
+          <div class="tier-price">$29.99 <span>/ one-time</span></div>
+          <a href="https://secaiplus.gumroad.com/l/practice-exam-2" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
+        </div>
+        <div class="tier-card reveal">
+          <div class="tier-status tier-status--live">Live Now</div>
+          <h3>Practice Exam 3</h3>
+          <p>54 scenario-based questions weighted to actual CY0-001 domain distribution. Timed format with explanations for every question.</p>
+          <div class="tier-price">$29.99 <span>/ one-time</span></div>
+          <a href="https://secaiplus.gumroad.com/l/practice-exam-3" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
+        </div>
+        <div class="tier-card reveal">
+          <div class="tier-status tier-status--live">Live Now</div>
+          <h3>Practice Exam Bundle</h3>
+          <p>All 3 practice exams (162 questions total) at the best price. Save $15 vs. buying individually.</p>
+          <div class="tier-price">$74.99 <span>/ bundle</span></div>
+          <a href="https://secaiplus.gumroad.com/l/exam-bundle" target="_blank" rel="noopener" class="btn-tier">Buy Now →</a>
+        </div>
+      </div>
+
+      <!-- Row 3: Coming Soon -->
+      <div class="tiers-grid" style="margin-top: 16px;">
         <div class="tier-card tier-card--coming reveal">
           <div class="tier-status tier-status--soon">Coming May 2026</div>
           <h3>Video Course</h3>
