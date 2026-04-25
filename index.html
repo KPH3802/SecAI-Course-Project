@@ -847,6 +847,54 @@
     }
 
     /* ─────────────────────────────────────────
+       FAQ
+    ───────────────────────────────────────── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 760px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .faq-answer {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .faq-answer code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--mint);
+      background: var(--mint-dim);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .faq-answer strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* ─────────────────────────────────────────
        SCROLLBAR
     ───────────────────────────────────────── */
     ::-webkit-scrollbar { width: 6px; }
@@ -1187,6 +1235,81 @@
           <p class="form-note">No spam. Unsubscribe anytime.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── FAQ ── -->
+  <section class="section" id="faq">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <div class="label">FAQ</div>
+        <h2>Common questions.</h2>
+        <p>Can't find what you need? Email <a href="mailto:kevin@secaiplus.com">kevin@secaiplus.com</a> and I'll help directly.</p>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <div class="faq-question">How do I open the Anki deck after I download it?</div>
+          <div class="faq-answer">
+            The deck is delivered as a <code>.apkg</code> file — it won't open on its own. It needs to be imported into the Anki app first. Once imported, all your cards will be ready to study. The import takes about 30 seconds. Follow whichever step fits your setup below.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">I have an Android phone. What do I need?</div>
+          <div class="faq-answer">
+            Download <strong>AnkiDroid</strong> for free from the Google Play Store. Open the app, tap the menu, select Import, and choose the <code>.apkg</code> file you downloaded. That's it.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">I have an iPhone and a laptop. What do I need?</div>
+          <div class="faq-answer">
+            No extra cost required. Download the free <strong>Anki desktop app</strong> at <a href="https://apps.ankiweb.net" target="_blank" rel="noopener">apps.ankiweb.net</a> on your laptop. Open the <code>.apkg</code> file in the desktop app to import it. Then create a free account at <a href="https://ankiweb.net" target="_blank" rel="noopener">ankiweb.net</a>, click Sync in the desktop app, and your cards will be available at ankiweb.net in your iPhone's browser at no extra cost.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">I only have an iPhone — no laptop. What do I need?</div>
+          <div class="faq-answer">
+            Unfortunately this is the one scenario that requires an additional purchase. You'll need <strong>AnkiMobile</strong> ($24.99 one-time) from the App Store. This is an Apple limitation — AnkiMobile is the only way to import a deck directly on iPhone without a computer. Once installed, tap the <code>.apkg</code> file and it will import automatically.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">I'm getting "failed to load" when I try to import the deck. What do I do?</div>
+          <div class="faq-answer">
+            This almost always means you're using <strong>AnkiPro</strong>, not the real Anki. AnkiPro is a different app from a different company, has a paid subscription, and can't reliably import <code>.apkg</code> files. Real Anki has no subscription. To fix it, follow whichever scenario above matches your setup (Android, iPhone + laptop, or iPhone only) using the actual Anki and re-import the deck. If you've confirmed you're on real Anki and still see the error, your download probably didn't complete — re-download the <code>.apkg</code> and try again.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What's the difference between the free deck and the Premium Anki Deck?</div>
+          <div class="faq-answer">
+            The free deck has 25 scenario-based cards covering all 4 exam domains — it's a solid sample of the format and content. The Premium Anki Deck has 150 cards with deeper coverage, more distractors, and more advanced exam tips. Same format, zero overlap between the two.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What's included in the Everything Bundle?</div>
+          <div class="faq-answer">
+            The Everything Bundle includes the Study Guide (43 pages), all 3 Practice Exams (162 questions total), and the Premium Anki Deck (150 cards) — all for $149.99, saving $50 vs. buying everything separately.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Do you offer refunds?</div>
+          <div class="faq-answer">
+            Yes — 30-day money-back guarantee on all products, no questions asked. Email <a href="mailto:kevin@secaiplus.com">kevin@secaiplus.com</a> if you need one.
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
